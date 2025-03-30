@@ -1,0 +1,43 @@
+ol, ul {
+	list-style: none;
+}
+
+body {
+    background-color: grey;
+    
+}
+
+.userstList {
+    display: flex;
+    gap: 45px;
+    
+}
+ 
+.userstList li {
+    font-size:18px;
+    border: 2px solid ;
+    width: 150px;
+    background-color: white;
+    transition: 3s all;
+}
+
+.userstList li:hover {
+    background-color: green;
+}
+#load-more {
+
+    font-size: 20px;
+    background-color: green;
+    outline: none;
+}
+
+#load-prev {
+    margin-left: 35px;
+    outline: none;
+    font-size: 20px;
+    background-color: yellow;
+    
+}
+#server-div {
+    margin-top: 30px;
+}
