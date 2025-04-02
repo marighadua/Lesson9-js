@@ -43,6 +43,7 @@ fetch('https://reqres.in/api/users?page=' + pages, {
     usersList.innerHTML = ' ';
     usersList.appendChild(fragment);
     totalPages = x.total_pages;
+    changeStatus();
 
 })
 .catch(function(error) {
@@ -51,7 +52,7 @@ fetch('https://reqres.in/api/users?page=' + pages, {
         pError.innerText =' server error' ;
         divAP.appendChild(pError);
     } else{
-        let pError2 = Document.createElement ('p');
+        let pError2 = document.createElement ('p');
         pError2.innerText ='page not found';
         divAP.appendChild(pError2);
     }
@@ -75,6 +76,26 @@ fetch('https://reqres.in/api/users?page=' + pages, {
     }
 
 
+
     currentPage += 1 ;
     getUsers(currentPage);
 })
+
+ function changeStatus () {
+    if ( currentPage === 1) {
+        btnPrev.disabled = true;
+    } else {
+        btnPrev.disabled = false;
+    }
+
+
+    if ( totalPages === currentPage) {
+        btnMore.disabled = true;
+    } else {
+        btnMore.disabled = false;
+    }
+ }
+
+
+
+
